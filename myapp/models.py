@@ -14,3 +14,9 @@ class Insignia(models.Model):
 
     def __str__(self):
         return self.title + ' - ' + self.project.name
+
+class User(models.Model):
+    nombre = models.CharField(max_length=30)
+    correo = models.CharField(max_length=30)
+    título = models.CharField(max_length=20)
+    edad = models.SmallIntegerField()
