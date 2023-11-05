@@ -38,8 +38,8 @@ def crear_insignia(request):
         'form':CrearInsigniaForm()
         })
     else:
-        Insignia.objects.create(title = request.POST['title'], description = request.POST['description'], project_id=2)
-        return redirect('insignias')
+        Insignia.objects.create(title = request.POST['nombre'], imagen = request.POST['imagen'], description = "Prueba")
+        return redirect('mybadges')
 
 
 def crear_project(request):
