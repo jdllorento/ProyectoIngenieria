@@ -15,8 +15,11 @@ def about(request):
     return render(request, 'about.html')
 
 def projects(request):
-    projects = list(Project.objects.values())
-    return render(request, 'projects.html')
+    #projects = list(Project.objects.values())
+    projects = Project.objects.all()
+    return render(request, 'projects.html', {
+        'projects' : projects
+    })
 
 def insignias(request):
     #insignias = Insignia.objects.get(title=title)
