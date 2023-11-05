@@ -1,15 +1,55 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Administración de Insignias</title>
+<style>
+  body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+  .container { max-width: 800px; margin: 50px auto; padding: 20px; background: #fff; border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+  h2 { text-align: center; color: #333; }
+  .form-group { margin-bottom: 15px; }
+  label { display: block; margin-bottom: 5px; }
+  input[type="text"], input[type="file"] { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+  button { width: auto; padding: 10px 20px; border: none; border-radius: 4px; background-color: #4CAF50; color: white; cursor: pointer; margin-top: 10px; }
+  button:hover { background-color: #45a049; }
+  .badge-list { margin-top: 30px; }
+  .badge-item { margin-bottom: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 4px; display: flex; align-items: center; justify-content: space-between; }
+  .badge-info { display: flex; align-items: center; }
+  .badge-info img { width: 50px; height: auto; margin-right: 10px; }
+  .badge-actions button { margin-left: 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>Crear Nueva Insignia</h2>
+  <form action="create_badge_endpoint" method="post" enctype="multipart/form-data"> <!-- Actualiza con tu endpoint de creación de insignias -->
+    <div class="form-group">
+      <label for="badgeName">Nombre de la Insignia:</label>
+      <input type="text" id="badgeName" name="badgeName" required>
+    </div>
+    <div class="form-group">
+      <label for="badgeImage">Imagen de la Insignia:</label>
+      <input type="file" id="badgeImage" name="badgeImage" required>
+    </div>
+    <button type="submit">Crear Insignia</button>
+  </form>
 
-{% block content %}
-
-<h1>Crear una nueva insignia</h1>
-
-<form method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button>
-        Save
-    </button>
-</form>
-
-{%  endblock %}
+  <div class="badge-list">
+    <h2>Asignar Insignias a Usuarios</h2>
+    <!-- Lista de insignias existentes -->
+    <div class="badge-item">
+      <div class="badge-info">
+        <img src="path_to_badge_image/insignia1.png" alt="Insignia 1">
+        <span>Nombre de Insignia 1</span>
+      </div>
+      <div class="badge-actions">
+        <!-- Aquí puedes añadir botones o formularios para asignar insignias a usuarios -->
+        <button>Asignar a Usuario</button>
+      </div>
+    </div>
+    <!-- Repite el bloque badge-item para cada insignia disponible -->
+  </div>
+</div>
+</body>
+</html>

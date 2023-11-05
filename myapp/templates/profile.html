@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfil</title>
+<style>
+  body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; }
+  header { background-color: #4CAF50; padding: 10px; color: white; text-align: center; }
+  nav { display: flex; justify-content: center; background-color: #333; }
+  nav a { color: white; padding: 14px 20px; text-decoration: none; }
+  nav a:hover { background-color: #ddd; color: black; }
+  .content { padding: 20px; }
+  footer { background-color: #4CAF50; padding: 10px; color: white; text-align: center; }
+  form { max-width: 600px; margin: 20px auto; }
+  label { display: block; margin-top: 10px; }
+  input, textarea { width: 100%; padding: 10px; margin-top: 5px; }
+  input[type="submit"] { background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; }
+  input[type="submit"]:hover { background-color: #45a049; }
+  .form-section { margin-bottom: 20px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Magneto Insignias</h1>
+</header>
+<nav>
+  <a href="{% url 'home' %}">Inicio</a>
+  <a href="{% url 'perfil' %}">Perfil</a>
+  <a href="{% url 'mybadges' %}">Mis Insignias</a>
+  <a href="{% url 'crear_insignia' %}">Crear</a>
+</nav>
+<div class="content">
+  <h2>Perfil del Usuario</h2>
+  <form action="submit_profile.php" method="post" enctype="multipart/form-data">
+    <div class="form-section">
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" name="nombre" required>
+    </div>
+    <div class="form-section">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-section">
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" required>
+    </div>
+    <div class="form-section">
+      <label for="direccion">Dirección de vivienda:</label>
+      <input type="text" id="direccion" name="direccion" required>
+    </div>
+    <div class="form-section">
+      <label for="ocupacion">Ocupación:</label>
+      <input type="text" id="ocupacion" name="ocupacion" required>
+    </div>
+    <div class="form-section">
+      <label for="experiencia">Experiencia:</label>
+      <textarea id="experiencia" name="experiencia" rows="4" required></textarea>
+    </div>
+    <div class="form-section">
+      <label for="observaciones">Observaciones:</label>
+      <textarea id="observaciones" name="observaciones" rows="4"></textarea>
+    </div>
+    <div class="form-section">
+      <label for="hoja_vida">Hoja de vida (CV):</label>
+      <input type="file" id="hoja_vida" name="hoja_vida" accept=".pdf,.doc,.docx" required>
+    </div>
+    <input type="submit" value="Enviar Perfil">
+  </form>
+</div>
+<footer>
+  <p>&copy; 2023 MagnetoInsignias</p>
+</footer>
+</body>
+</html>
+</html>

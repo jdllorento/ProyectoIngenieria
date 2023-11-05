@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mis Insignias</title>
+<style>
+  body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; }
+  header { background-color: #4CAF50; padding: 10px; color: white; text-align: center; }
+  nav { display: flex; justify-content: center; background-color: #333; }
+  nav a { color: white; padding: 14px 20px; text-decoration: none; }
+  nav a:hover { background-color: #ddd; color: black; }
+  .content { padding: 20px; }
+  footer { background-color: #4CAF50; padding: 10px; color: white; text-align: center; }
+  .insignias-container { display: flex; flex-wrap: wrap; justify-content: center; }
+  .insignia { margin: 10px; text-align: center; }
+  .insignia img { width: 100px; height: auto; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Magneto Insignias</h1>
+</header>
+<nav>
+  <a href="{% url 'home' %}">Inicio</a>
+  <a href="{% url 'perfil' %}">Perfil</a>
+  <a href="{% url 'mybadges' %}">Mis Insignias</a>
+  <a href="{% url 'crear_insignia' %}">Crear</a>
+</nav>
+<div class="content">
+  <h2>Mis Insignias</h2>
+  <div class="insignias-container">
+    <!-- Las insignias se añadirán aquí dinámicamente con JavaScript o directamente desde el backend -->
+    <div class="insignia">
+      <img src="path_to_badge_image/active_candidate_badge.png" alt="Active Candidate Badge" />
+      <p>Active Candidate Badge</p>
+    </div>
+    <!-- Repetir bloques similares para cada insignia que el usuario posea -->
+  </div>
+</div>
+<footer>
+  <p>&copy; 2023 Magneto Insignias</p>
+</footer>
+<script>
+// Aquí podrías añadir JavaScript para cargar dinámicamente las insignias desde el backend
+</script>
+</body>
+</html>

@@ -1,22 +1,22 @@
 <nav>
     <ul>
         <li>
-            <a href="/">Home</a>
+            <a href="{% url 'home' %}">Home</a>
         </li>
         <li>
-            <a href="/projects">Projects</a>
+            <a href="{% url 'projects' %}">Projects</a>
         </li>
         <li>
-            <a href="/insignias">Insignias</a>
+            <a href="{% url 'insignias' %}">Insignias</a>
         </li>
         <li>
-            <a href="/about">About</a>
+            <a href="{% url 'about' %}">About</a>
         </li>
         <li>
-            <a href="/crear_insignia">Crear tu propia insignia</a>
+            <a href="{% url 'crear_insignia' %}">Crear tu propia insignia</a>
         </li>
         <li>
-            <a href="/crear_project">Crear un proyecto</a>
+            <a href="{% url 'crear_proyecto' %}">Crear un proyecto</a>
         </li>
     </ul>
 </nav>

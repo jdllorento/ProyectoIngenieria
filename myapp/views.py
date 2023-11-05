@@ -48,9 +48,17 @@ def crear_project(request):
         'form': CrearProject()
         })
     else:
-        project = Project.objects.create(name=request.POST["name"])
-        print(project)
-        return render(request, 'crear_project.html', {
-        'form': CrearProject()
-        })
-    
+        Project.objects.create(name=request.POST["name"])
+        return redirect('projects')
+
+def login(request):
+    return render(request, 'login.html')
+
+def registro(request):
+    return render(request, 'registro.html')
+
+def mybadges(request):
+    return render(request, 'my_badges.html')
+
+def profile(request):
+    return render(request, 'profile.html')
