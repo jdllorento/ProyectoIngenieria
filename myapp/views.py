@@ -21,3 +21,6 @@ def projects(request):
 def insignias(request):
     #insignias = Insignia.objects.get(title=title)
     return render(request, 'insignias.html')
+
+def profile(request):
+    return render(request, 'profile.html')
