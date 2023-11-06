@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from .models import Project, Insignia
-from .forms import CrearInsigniaForm, CrearProject
+from .models import Insignia, UserInsignias
+from .forms import CrearInsigniaForm, AsignarInsignia
 
 # Create your views here.
 
@@ -14,20 +14,6 @@ def home(request):
 
 def about(request):
     return render(request, 'about.html')
-
-def projects(request):
-    #projects = list(Project.objects.values())
-    projects = Project.objects.all()
-    return render(request, 'projects.html', {
-        'projects' : projects
-    })
-
-def insignias(request):
-    #insignias = Insignia.objects.get(title=title)
-    insignias = Insignia.objects.all()
-    return render(request, 'insignias.html', {
-        'insignias' : insignias
-    })
 
 def profile(request):
     return render(request, 'profile.html')
@@ -41,16 +27,6 @@ def crear_insignia(request):
         Insignia.objects.create(title = request.POST['nombre'], imagen = request.POST['imagen'], description = "Prueba")
         return redirect('mybadges')
 
-
-def crear_project(request):
-    if request.method == 'GET':
-        return render(request, 'crear_project.html', {
-        'form': CrearProject()
-        })
-    else:
-        Project.objects.create(name=request.POST["name"])
-        return redirect('projects')
-
 def login(request):
     return render(request, 'login.html')
 
@@ -58,7 +34,19 @@ def registro(request):
     return render(request, 'registro.html')
 
 def mybadges(request):
-    return render(request, 'my_badges.html')
+    badges = Insignia.objects.filter(obtenida=True)
+    return render(request, 'my_badges.html', {
+        'badges': badges
+    })
 
 def profile(request):
     return render(request, 'profile.html')
+
+def asignbadge(request):
+    if request.method == 'GET':
+         return render(request, 'asignar_insignia.html', {
+        'form':AsignarInsignia()
+        })
+    else:
+        UserInsignias.objects.create(user_id = request.POST['usuario'], insignia_id = request.POST['insignia'])
+        return redirect('home')

@@ -1,25 +1,20 @@
-<nav>
-    <ul>
-        <li>
-            <a href="{% url 'home' %}">Home</a>
-        </li>
-        <li>
-            <a href="{% url 'projects' %}">Projects</a>
-        </li>
-        <li>
-            <a href="{% url 'insignias' %}">Insignias</a>
-        </li>
-        <li>
-            <a href="{% url 'about' %}">About</a>
-        </li>
-        <li>
-            <a href="{% url 'crear_insignia' %}">Crear tu propia insignia</a>
-        </li>
-        <li>
-            <a href="{% url 'crear_proyecto' %}">Crear un proyecto</a>
-        </li>
-    </ul>
-</nav>
-
-{% block content %}
+{% block content1 %}
 {% endblock %}
+<header>
+    <h1>Magneto Insignias</h1>
+  </header>
+  <nav>
+    <a href="{% url 'home' %}">Inicio</a>
+    <a href="{% url 'perfil' %}">Perfil</a>
+    <a href="{% url 'mybadges' %}">Mis Insignias</a>
+    <a href="{% url 'crear_insignia' %}">Crear</a>
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'asignar' %}">Asignar</a>
+  </nav>
+
+{% block content2 %}
+{% endblock %}
+
+<footer>
+    <p>&copy; 2023 Magneto Insignias</p>
+  </footer>

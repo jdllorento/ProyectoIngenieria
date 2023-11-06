@@ -6,3 +6,7 @@ class CrearInsigniaForm(forms.Form):
 
 class CrearProject(forms.Form):
     name = forms.CharField(label="Nombre del proyecto", max_length=200)
+
+class AsignarInsignia(forms.Form):
+    usuario = forms.IntegerField(label="Id del usuario a asignar")
+    insignia = forms.IntegerField(label="Id insignia a asignar")

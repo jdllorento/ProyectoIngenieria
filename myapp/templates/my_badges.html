@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block content1 %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,29 +20,21 @@
 </style>
 </head>
 <body>
-<header>
-  <h1>Magneto Insignias</h1>
-</header>
-<nav>
-  <a href="{% url 'home' %}">Inicio</a>
-  <a href="{% url 'perfil' %}">Perfil</a>
-  <a href="{% url 'mybadges' %}">Mis Insignias</a>
-  <a href="{% url 'crear_insignia' %}">Crear</a>
-</nav>
+{% endblock %}
+{% block content2 %}
 <div class="content">
-  <h2>Mis Insignias</h2>
+  <h1>Mis Insignias</h1>
+  {% for badge in badges %}
   <div class="insignias-container">
     <!-- Las insignias se añadirán aquí dinámicamente con JavaScript o directamente desde el backend -->
     <div class="insignia">
-      <img src="path_to_badge_image/active_candidate_badge.png" alt="Active Candidate Badge" />
-      <p>Active Candidate Badge</p>
+      <h2>{{badge.title}}</h2>
     </div>
+  {% endfor %}
     <!-- Repetir bloques similares para cada insignia que el usuario posea -->
   </div>
 </div>
-<footer>
-  <p>&copy; 2023 Magneto Insignias</p>
-</footer>
+{% endblock %}
 <script>
 // Aquí podrías añadir JavaScript para cargar dinámicamente las insignias desde el backend
 </script>

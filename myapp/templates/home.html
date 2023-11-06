@@ -1,4 +1,6 @@
+{% extends 'base.html' %}
 {% load static %}
+{% block content1 %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,24 +17,15 @@
   footer { background-color: #4CAF50; padding: 10px; color: white; text-align: center; }
 </style>
 </head>
+
 <body>
-<header>
-  <h1>Magneto Insignias</h1>
-</header>
-<nav>
-  <a href="{% url 'home' %}">Inicio</a>
-  <a href="{% url 'perfil' %}">Perfil</a>
-  <a href="{% url 'mybadges' %}">Mis Insignias</a>
-  <a href="{% url 'crear_insignia' %}">Crear</a>
-  <a href="{% url 'login' %}">Login</a>
-</nav>
+{% endblock %}
+{% block content2 %}
 <div class="content">
   <h2>Este es el contenido principal</h2>
-  <p>Este es un párrafo de ejemplo para la página de inicio. Aquí puedes agregar tu propio texto para dar la bienvenida a los visitantes a tu sitio web.</p>
-  <img src="{% static 'MEIKO_20_art.png' %}" alt="", width="1000">
+  <p>Bienvenido a la página de inicio de MagnetoInsignias</p>
+  <img src="{% static 'WhatsApp Image 2023-08-21 at 8.49.51 PM.jpeg' %}" alt="No pudimos encontrar la foto :()", width="1000">
 </div>
-<footer>
-  <p>&copy; 2023 MagnetoInsignias</p>
-</footer>
+{% endblock %}
 </body>
 </html>
