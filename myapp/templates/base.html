@@ -1,8 +1,16 @@
 {% block content1 %}
 {% endblock %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/basestyle.css' %}">
-<header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'css/basestyle.css' %}">
+</head>
+<body>
+  <header>
     <h1>Magneto Insignias</h1>
   </header>
   <nav>
@@ -25,5 +33,7 @@
 {% endblock %}
 
 <footer>
-    <p>&copy; 2023 Magneto Insignias</p>
+    2023 Magneto Insignias
 </footer>
+</body>
+</html>

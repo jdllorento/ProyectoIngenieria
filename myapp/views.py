@@ -24,16 +24,40 @@ def profile(request):
 
 @user_passes_test(user_is_admin)
 def crear_insignia(request):
-    try:
-        if request.method == 'GET':
-            return render(request, 'crear_insignia.html', {
-                'form':CrearInsigniaForm()
-            })
+        if request.method == 'POST':
+            form = CrearInsigniaForm(request.POST, request.FILES)
+            if form.is_valid():
+                title = form.cleaned_data['nombre']
+                description = form.cleaned_data['descripcion']
+                imagen = form.cleaned_data['imagen']
+                
+                insignia = Insignia(
+                    title=title,
+                    description=description,
+                    imagen=imagen,
+                )
+
+                insignia.save()
+                return redirect('mybadges')
         else:
-            Insignia.objects.create(title = request.POST['nombre'], imagen = request.POST['imagen'], description = "Prueba")
-            return redirect('mybadges')
-    except:
-        return HttpResponse('No eres admin')
+            form = CrearInsigniaForm()
+
+        return render(request, 'crear_insignia.html', {'form':form})
+
+
+
+#    try:
+#        if request.method == 'GET':
+#            return render(request, 'crear_insignia.html', {
+#                'form':CrearInsigniaForm()
+#            })
+#        else:
+#            form = CrearInsigniaForm(request.POST, request.FILES)
+#            form.save()
+#            Insignia.objects.create(title = request.POST['nombre'], imagen = request.POST['imagen'], description = "Prueba")
+#            return redirect('mybadges')
+#    except:
+#        return HttpResponse('No eres admin')
 
 def login(request):
     return render(request, 'login.html')

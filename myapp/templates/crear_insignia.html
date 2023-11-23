@@ -27,7 +27,7 @@
 {% block content2 %}
 <div class="container">
   <h2>Crear Nueva Insignia</h2>
-  <form method="POST">
+  <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{form}}
     <button>

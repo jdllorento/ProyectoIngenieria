@@ -9,7 +9,7 @@ class Insignia(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     obtenida = models.BooleanField(default=False)
-    imagen = models.ImageField()
+    imagen = models.ImageField(upload_to='files/')
     portador = models.ManyToManyField(User, blank=True)
 
     def __str__(self):

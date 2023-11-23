@@ -1,7 +1,7 @@
-body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; display:flex; flex-direction: column; min-height: 100vh;}
+body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; display:flex; flex-direction: column; min-height: 100vh; background-color: lightgray;}
 header { background-color: #4CAF50; padding: 10px; color: white; text-align: center; }
 nav { display: flex; justify-content: center; background-color: #333; height: 50px;}
 nav a { color: white; padding: 14px 20px; text-decoration: none; }
 nav a:hover { background-color: #ddd; color: black; }
 .content { padding: 20px; }
-footer { background-color: #4CAF50; padding: 10px; color: white; text-align: center; width:100%; margin-top:auto}
+footer { background-color: #4CAF50; padding: 10px; color: white; text-align: center; width:100%; margin-top:auto; height: 80px;}
