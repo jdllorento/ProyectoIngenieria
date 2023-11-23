@@ -11,5 +11,5 @@ urlpatterns = [
     path('registro/', views.registro, name="registro"),
     path('mybadges/', views.mybadges, name="mybadges"),
     path('profile/', views.profile, name="perfil"),
-    path('asignar/', views.asignbadge, name="asignar")
+    path('asignar/', views.asignbadge, name="asignar"),
 ]

@@ -1,15 +1,24 @@
 {% block content1 %}
 {% endblock %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/basestyle.css' %}">
 <header>
     <h1>Magneto Insignias</h1>
   </header>
   <nav>
+    {% if user.is_authenticated %}
     <a href="{% url 'home' %}">Inicio</a>
     <a href="{% url 'perfil' %}">Perfil</a>
     <a href="{% url 'mybadges' %}">Mis Insignias</a>
     <a href="{% url 'crear_insignia' %}">Crear</a>
-    <a href="{% url 'login' %}">Login</a>
     <a href="{% url 'asignar' %}">Asignar</a>
+    <a href="{% url 'logout'%}?next={{request.path}}">User: {{ user.get_username }} Cerrar sesión</a>
+    {% else %}
+    <a href="{% url 'home' %}">Inicio</a>
+    <a href="{% url 'perfil' %}">Perfil</a>
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'registro' %}">Registro</a>
+    {% endif %}
   </nav>
 
 {% block content2 %}
@@ -17,4 +26,4 @@
 
 <footer>
     <p>&copy; 2023 Magneto Insignias</p>
-  </footer>
+</footer>
