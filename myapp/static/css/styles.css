@@ -90,3 +90,16 @@ main{
 .btn-asignar{
     margin-top: 10px;
 }
+
+.crear-form{
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-crear{
+    margin-top: 10px;
+}

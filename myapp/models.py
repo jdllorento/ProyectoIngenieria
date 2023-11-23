@@ -20,7 +20,3 @@ class User(models.Model):
     correo = models.CharField(max_length=30)
     título = models.CharField(max_length=20)
     edad = models.SmallIntegerField()
-
-class UserInsignias(models.Model):
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    insignia_id = models.ForeignKey(Insignia, on_delete=models.CASCADE)

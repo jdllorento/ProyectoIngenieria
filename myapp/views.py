@@ -16,9 +16,6 @@ def home(request):
         'title' : title
     })
 
-def about(request):
-    return render(request, 'about.html')
-
 def profile(request):
     return render(request, 'profile.html')
 
@@ -43,21 +40,6 @@ def crear_insignia(request):
             form = CrearInsigniaForm()
 
         return render(request, 'crear_insignia.html', {'form':form})
-
-
-
-#    try:
-#        if request.method == 'GET':
-#            return render(request, 'crear_insignia.html', {
-#                'form':CrearInsigniaForm()
-#            })
-#        else:
-#            form = CrearInsigniaForm(request.POST, request.FILES)
-#            form.save()
-#            Insignia.objects.create(title = request.POST['nombre'], imagen = request.POST['imagen'], description = "Prueba")
-#            return redirect('mybadges')
-#    except:
-#        return HttpResponse('No eres admin')
 
 def login(request):
     return render(request, 'login.html')
@@ -92,7 +74,6 @@ def asignbadge(request):
         'form':AsignarInsignia()
         })
     else:
-        #Insignia.portador.add(user_id = request.POST['usuario'], insignia_id = request.POST['insignia'])
         ins = Insignia.objects.get(id = request.POST['insignia'])
         us = User.objects.get(id = request.POST['usuario'])
         a = ins.portador.add(us)

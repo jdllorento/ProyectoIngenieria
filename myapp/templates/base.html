@@ -16,14 +16,13 @@
   <nav>
     {% if user.is_authenticated %}
     <a href="{% url 'home' %}">Inicio</a>
-    <a href="{% url 'perfil' %}">Perfil</a>
     <a href="{% url 'mybadges' %}">Mis Insignias</a>
     <a href="{% url 'crear_insignia' %}">Crear</a>
     <a href="{% url 'asignar' %}">Asignar</a>
+    <a href="{% url 'perfil' %}">Perfil</a>
     <a href="{% url 'logout'%}?next={{request.path}}">User: {{ user.get_username }} Cerrar sesión</a>
     {% else %}
     <a href="{% url 'home' %}">Inicio</a>
-    <a href="{% url 'perfil' %}">Perfil</a>
     <a href="{% url 'login' %}">Login</a>
     <a href="{% url 'registro' %}">Registro</a>
     {% endif %}
