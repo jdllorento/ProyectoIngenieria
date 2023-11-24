@@ -39,6 +39,7 @@ a:hover { text-decoration: underline; }
     background-color: #fff;
     color: #fff;
     height: fit-content;
+    width: 400px;
 }
 
 .insignia:hover{
@@ -57,6 +58,7 @@ a:hover { text-decoration: underline; }
 .insignia-details{
     text-align: left;
     padding-left: 10px;
+    padding-right: 10px;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -67,6 +69,13 @@ a:hover { text-decoration: underline; }
     color: black;
     font-family: Segoe UI;
     font-size: 19px;
+    font-weight: 700;
+}
+
+.insignia-details .description{
+    color: black;
+    font-family: Segoe UI;
+    font-size: 15px;
     font-weight: 700;
 }
 

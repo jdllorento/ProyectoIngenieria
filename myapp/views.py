@@ -66,7 +66,10 @@ def mybadges(request):
     })
 
 def profile(request):
-    return render(request, 'profile.html')
+    badges = Insignia.objects.filter(portador=request.user)
+    return render(request, 'profile.html', {
+        'badges':badges
+    })
 
 def asignbadge(request):
     if request.method == 'GET':

@@ -23,8 +23,8 @@
     <a href="{% url 'logout'%}?next={{request.path}}">User: {{ user.get_username }} Cerrar sesión</a>
     {% else %}
     <a href="{% url 'home' %}">Inicio</a>
-    <a href="{% url 'login' %}">Login</a>
-    <a href="{% url 'registro' %}">Registro</a>
+    <a href="{% url 'login' %}">Log in</a>
+    <a href="{% url 'registro' %}">Sign In</a>
     {% endif %}
   </nav>
 

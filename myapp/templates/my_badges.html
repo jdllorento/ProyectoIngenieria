@@ -10,13 +10,14 @@
 {% endblock %}
 {% block content2 %}
   <h1>Mis Insignias</h1>
+  <h1>Insignias conseguidas: {{ badges.count }}</h1>
   <div class="insignias-container">
     {% for badge in badges %}
     <div class="insignia">
       <img src="{{ badge.imagen.url }}" alt="{{ badge.title }}">
       <div class="insignia-details">
         <p class="title">{{badge.title}}</p>
-        <p>{{badge.description}}</p>
+        <p class="description">{{badge.description}}</p>
       </div>
     </div>
   {% endfor %}
